@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
 
 const ProjectsSection = styled.section`
   text-align: center;
@@ -55,8 +55,9 @@ const ProjectInfo = styled.div`
   align-items: center;
   text-align: center;
 
-  h3, p {
-    color: white;  /* Cambiar el color del texto a blanco */
+  h3,
+  p {
+    color: white; /* Cambiar el color del texto a blanco */
   }
 `;
 
@@ -69,27 +70,29 @@ const Projects = () => {
   const projects = [
     {
       title: "PrestService",
-      description: "PrestService es sistema integral para gestionar productos y servicios en sucursales, con seguridad mediante Spring Security y roles personalizados para cada área.",
-      image: "../../public/diseño.png",
-      link: "https://github.com/Eliza266/PrestServices/blob/main/ServiceBackApp/README.md"  // Link to the project page
+      description:
+        "PrestService es sistema integral para gestionar productos y servicios en sucursales, con seguridad mediante Spring Security y roles personalizados para cada área.",
+      image: "./diseño.png",
+      link: "https://github.com/Eliza266/PrestServices/blob/main/ServiceBackApp/README.md", // Link to the project page
     },
     {
       title: "Pepita App",
-      description: "Experiencia Es un Sistema Gestor de Control de Inventario para una tienda de textiles, cuenta con informes detallados de cada proceso que se lleva a cabo dentro de la aplicación, guardando la información en un servidor.",
-      image: "../../public/ppitaapp.png",
-      link: "https://pepita-app.netlify.app/"  // Link to the project page
+      description:
+        "Experiencia Es un Sistema Gestor de Control de Inventario para una tienda de textiles, cuenta con informes detallados de cada proceso que se lleva a cabo dentro de la aplicación, guardando la información en un servidor.",
+      image: "./ppitaapp.png",
+      link: "https://pepita-app.netlify.app/", // Link to the project page
     },
     {
       title: "Hamburguers",
       description: "Proyecto responsivo",
-      image: "../../public/hamburguer.png",
-      link: "https://eliza266.github.io/Hamburguer/"  // Link to the project page
-    }
+      image: "./hamburguer.png",
+      link: "https://eliza266.github.io/Hamburguer/", // Link to the project page
+    },
   ];
 
   return (
-    <ProjectsSection ref={ref} id='proyectos'>
-      <motion.h2 
+    <ProjectsSection ref={ref} id="proyectos">
+      <motion.h2
         className="section-title"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
@@ -99,7 +102,12 @@ const Projects = () => {
 
       <ProjectGrid>
         {projects.map((project, index) => (
-          <a href={project.link} target="_blank" rel="noopener noreferrer" key={index}>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+          >
             <ProjectCard
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}

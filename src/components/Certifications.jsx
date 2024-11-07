@@ -45,19 +45,19 @@ const Certifications = () => {
       title: "Bachiller 2015",
       issuer: "Benedickta Zur Nieden",
       date: "2015",
-      logo: "/public/bachiller.png",
+      logo: "./bachiller.png",
     },
     {
       title: "Codificación y Programación Samsung Innovation",
       issuer: "Universidad Pontificia Javeriana",
       date: "2022",
-      logo: "/public/javeriana1.png",
+      logo: "./javeriana1.png",
     },
     {
       title: "Tecnico Laboral Desarrollo de software",
       issuer: "Campuslands",
       date: "2024",
-      logo: "/public/campus.png",
+      logo: "./campus.png",
     },
   ];
 
