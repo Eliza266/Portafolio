@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaDatabase, FaCogs } from "react-icons/fa";
-import { SiPostgresql, SiMysql, SiSpring } from "react-icons/si"; // Reemplaza SiMaven y SiHexo si no están disponibles
+import { SiPostgresql, SiMysql, SiSpring } from "react-icons/si";
 
 const SkillsSection = styled.section`
   display: flex;
@@ -24,6 +24,17 @@ const SkillsGrid = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
+
+  /* Ajuste para pantallas de menor tamaño */
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    padding: 1rem;
+  }
 `;
 
 const SkillCard = styled.div`
@@ -54,13 +65,28 @@ const SkillCard = styled.div`
 
     &:hover {
       color: var(--color-primary);
-      transform: scale(1.2); /* Aumenta el tamaño del icono al pasar el cursor */
+      transform: scale(1.2);
     }
   }
 
   h3 {
     font-size: 1rem;
     color: var(--color-text);
+  }
+
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+    padding: 1rem;
+
+    svg {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 0.8rem;
+    }
   }
 `;
 

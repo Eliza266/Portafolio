@@ -7,12 +7,19 @@ import Eve from './Eve'; // Asegúrate de importar el componente Eve
 
 const ContactSection = styled.section`
   min-height: 100vh;
-  padding: 5rem 0;
+  padding: 5rem 1rem; /* Agrega algo de padding lateral */
   display: flex;
-  flex-direction: row; /* Alineamos el contenido en fila */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 5rem; /* Espacio entre el componente Eve y el contenido de contacto */
+  gap: 5rem;
+
+  /* Cambiar a disposición en columna en pantallas pequeñas */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem; /* Reduce el espacio entre Eve y el contenido de contacto */
+    padding: 2rem 1rem;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -24,14 +31,25 @@ const ContactContainer = styled.div`
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alineamos el contenido dentro del contenedor a la izquierda */
+  align-items: flex-start;
+
+  /* Ajuste para centrar en pantallas pequeñas */
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
-  justify-content: flex-start; /* Alineamos los íconos a la izquierda */
+  justify-content: flex-start;
   gap: 2rem;
   margin-top: 2rem;
+
+  /* Centrar iconos en pantallas pequeñas */
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const SocialIcon = styled(motion.a)`
@@ -45,9 +63,15 @@ const SocialIcon = styled(motion.a)`
 `;
 
 const EveContainer = styled.div`
-  transform: scale(1.2); /* Escalamos Eve */
-  width: 20rem; /* Ajusta el tamaño de Eve según sea necesario */
-  height: auto; /* Ajuste automático de la altura */
+  transform: scale(1.2);
+  width: 20rem;
+  height: auto;
+
+  /* Ajuste de tamaño y alineación en pantallas pequeñas */
+  @media (max-width: 768px) {
+    width: 15rem;
+    transform: scale(1); /* Restablece el escalado en pantallas pequeñas */
+  }
 `;
 
 const Contact = () => {
@@ -71,7 +95,7 @@ const Contact = () => {
           transition={{ delay: 0.2 }}
         >
           <h3>¡Trabajemos juntos!</h3>
-          <p>Correo: eliza,perez266@gmail.com</p>
+          <p>Correo: eliza.perez266@gmail.com</p>
           <p>Teléfono: 3117652435</p>
 
           <SocialLinks>
